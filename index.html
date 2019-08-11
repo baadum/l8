@@ -9,18 +9,57 @@
 <body>
   
 <script>
+
 // 1
 
 var arrayNumber = [1,2,3,4,5,6,7,8,9,10];
 
 function odd(arr) {
     var array=[];
-    for(i=1; i<arr.length; i++) {
-        if(i%2 == 0) continue
+    for(i=0; i<arr.length; i++) {
+        if(i%2 == 0) {
+            array.push(arr[i])
+        } 
     }
-    return array[i];
+    return array;
 };
 console.log(odd(arrayNumber));
+
+// 2
+
+function even(arr) {
+    var array=[];
+    for(i=0; i<arr.length; i++) {
+        if(i%2 !== 0) {
+            array.push(arr[i])
+        } 
+    }
+    return array;
+};
+console.log(even(arrayNumber));
+
+
+// 3
+
+ var isPalindrome = function(str) {
+     if (str === parseInt(str.toString().split('').reverse().join(''))) {
+         return str + ' Palindrome';
+     } else {
+            return isPalindrome(str + parseInt(str.toString().split('').reverse().join('')));
+     }
+ 
+ }
+console.log(isPalindrome(89));
+
+
+// 4
+
+var arrayMult = [1,[2],[3,4],[5,[6,[7]],8,9],10];
+
+function flat(array) {
+    return array.toString().split(',').map(Number);
+}
+console.log(flat(arrayMult));
 
 </script>
 </body>
